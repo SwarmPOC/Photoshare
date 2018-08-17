@@ -7,7 +7,7 @@
 //
 
 #import "CommonViewController.h"
-#import "SegmentedControlWithSearch.h"
+// #import "SegmentedControlWithSearch.h"
 #import "User.h"
 
 @interface ProfileViewController : CommonViewController <UITextFieldDelegate,
@@ -17,7 +17,7 @@
 
 @property (strong, nonatomic) UIScrollView *scrollView;
 @property (strong, nonatomic) UILabel *nameLabel;
-@property (strong, nonatomic) SegmentedControlWithSearch *segmentedControl;
+// @property (strong, nonatomic) SegmentedControlWithSearch *segmentedControl;
 
 
 - (id)init:(User *)UserData; 
