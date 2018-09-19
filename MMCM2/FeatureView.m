@@ -7,10 +7,13 @@
 //
 
 #import "FeatureView.h"
+#import "ViewUtilities.h"
 
 @implementation FeatureView
    CGSize size;
    UIImageView *imageView;
+   static id delegate;
+   static int shadowHeight = 0;
 
 
 - (void)setImage:(NSString *)string;
@@ -23,22 +26,22 @@
 - (id)init:(id)Delegate;
 {
    self = [super init];
-   [self setupVars];
+   [self setupVars:Delegate];
    [self setupImageView];
    [self setupShadow];
    [self setupNameLabel];
    [self setupFeatureButton];
    [self setupEditProfileButton];
 
-   [self setImage:"tempImage"];
+   [self setImage:@"tempImage"];
    return self;
 }
 
-- (void)setupVars;
+- (void)setupVars:(id)Delegate;
 {
    delegate             = Delegate;
    size                 = CGSizeMake(screenWidth,screenHeight/goldenRatio);
-   self.frame           = CGRectMake(0,0,screenWidth,size);
+   self.frame           = CGRectMake(0,0,size.width, size.height);
    self.backgroundColor = [UIColor blackColor];
    imageView            = [[UIImageView alloc] init];
 }
@@ -46,7 +49,7 @@
 - (void)setupImageView;
 {
    imageView.contentMode = UIViewContentModeScaleAspectFill;
-   imageView.frame = { {0,0}, size };
+   imageView.frame =  CGRectMake(0,0, size.width, size.height);
    [self addSubview:imageView];
 }
 
@@ -76,15 +79,17 @@
 }
 - (NSString *)labelText;
 {
-   return _user.fullName;
+   // return _user.fullName;
+   return @"Name";
 }
 
 
 - (void)setupFeatureButton;
 {
    UIButton *button;
-   if (isMyProfile) { // elipses button
-      button = [self newMenuButon];
+   if (true) { // elipses button
+   // if (isMyProfile) { // elipses button
+      // button = [self newMenuButon];
       button.center = _textLabel.center;
       [ViewUtilities setX:screenWidth - 45 forView:button];
    }

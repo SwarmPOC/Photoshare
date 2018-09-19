@@ -39,20 +39,20 @@
 - (void)setupFeatureView;
 {
    [self setupCoverPhoto];
-   [self setupShadow];
+   // [self setupShadow];
    [self setupNameLabel];
-   [self setupFeatureButton];
-   [self setupEditProfileButton];
+   // [self setupFeatureButton];
+   // [self setupEditProfileButton];
 }
 
 - (void)setupCoverPhoto;
 {
-   coverPhotoImageView = [[UIImageView alloc] init];
-   coverPhotoImageView.contentMode = UIViewContentModeScaleAspectFill;
-   CGRect rect = { {0,0}, [self imageSize] };
-   coverPhotoImageView.frame = rect;
-   coverPhotoImageView.image = [UIImage imageNamed:[self imageName]];
-   [_scrollView addSubview:coverPhotoImageView];
+   // coverPhotoImageView = [[UIImageView alloc] init];
+   // coverPhotoImageView.contentMode = UIViewContentModeScaleAspectFill;
+   // CGRect rect = { {0,0}, [self imageSize] };
+   // coverPhotoImageView.frame = rect;
+   // coverPhotoImageView.image = [UIImage imageNamed:[self imageName]];
+   // [_scrollView addSubview:coverPhotoImageView];
 }
 - (CGSize)imageSize;
 {
@@ -65,17 +65,17 @@
 
 - (void)setupNameLabel;
 {
-   _nameLabel = [[UILabel alloc] init];
-   _nameLabel.frame = CGRectMake(20,CGRectGetMaxY(coverPhotoImageView.frame) - 42 ,screenWidth,26);
-   _nameLabel.textAlignment = NSTextAlignmentLeft;
-   _nameLabel.text = [self labelText];
-   _nameLabel.textColor = [UIColor whiteColor];
-   _nameLabel.numberOfLines = 1;
-   _nameLabel.font = [UIFont systemFontOfSize: 22 weight:UIFontWeightRegular];
-   [_scrollView addSubview:_nameLabel];
+   // _nameLabel = [[UILabel alloc] init];
+   // _nameLabel.frame = CGRectMake(20,CGRectGetMaxY(coverPhotoImageView.frame) - 42 ,screenWidth,26);
+   // _nameLabel.textAlignment = NSTextAlignmentLeft;
+   // _nameLabel.text = [self labelText];
+   // _nameLabel.textColor = [UIColor whiteColor];
+   // _nameLabel.numberOfLines = 1;
+   // _nameLabel.font = [UIFont systemFontOfSize: 22 weight:UIFontWeightRegular];
+   // [_scrollView addSubview:_nameLabel];
 }
 - (NSString *)labelText;
 {
-   return ""; 
+   return @""; 
 }
 @end

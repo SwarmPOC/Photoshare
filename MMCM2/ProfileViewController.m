@@ -229,7 +229,6 @@
    [_scrollView addSubview:tableView];
 }
 
-
 - (void)setupSegmentedControl;
 {
    _segmentedControl = [[SegmentedControlWithSearch alloc] init:self];
